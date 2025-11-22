@@ -1,8 +1,11 @@
 Amazon Music Clustering Project
-Overview
+
+**Overview**
+
 This project performs clustering on a dataset of songs from artists associated with a single genre. The goal is to group songs based on audio features such as danceability, energy, loudness, and more, using K-Means clustering after dimensionality reduction with PCA. The analysis identifies patterns in the data, such as "Chill Acoustic" tracks, "Party" tracks, and rap/spoken-word content.
 The dataset appears to be sourced from Spotify-like features (e.g., danceability, valence) but is labeled for Amazon music clustering.
-Dataset
+
+**Dataset**
 
 File: single_genre_artists.csv
 Columns:
@@ -30,11 +33,12 @@ genres: Artist genres (as list)
 name_artists: Artist name
 popularity_artists: Artist popularity
 
-Size: 95,837 rows (songs)
-Source: Not specified in the notebook; assumed to be a custom or public dataset (e.g., from Spotify API).
+**Size**: 95,837 rows (songs)
+**Source**: Not specified in the notebook; assumed to be a custom or public dataset (e.g., from Spotify API).
 
 The clustering focuses on the following features: danceability, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration_ms.
-Requirements
+
+**Requirements**
 
 Python 3.x
 Libraries:
@@ -43,17 +47,18 @@ seaborn
 matplotlib
 scikit-learn (for StandardScaler, PCA, KMeans, silhouette_score)
 
+**Install dependencies using:**
 
-Install dependencies using:
 textpip install pandas seaborn matplotlib scikit-learn
-Usage
 
-Run the Notebook:
+**Usage**
+
+**Run the Notebook:**
 Open Amazon.ipynb in Jupyter Notebook or JupyterLab.
 Ensure the dataset single_genre_artists.csv is in the specified path (e.g., C:/Amazon music clustering/single_genre_artists.csv). Update the path if necessary.
 Execute cells sequentially.
 
-Key Steps in the Notebook:
+**Key Steps in the Notebook:**
 Load and display the dataset.
 Select features for clustering.
 Scale the data using StandardScaler.
@@ -65,11 +70,11 @@ Visualize clusters using a scatter plot of PCA components.
 Compute and print cluster summaries (mean feature values).
 Save the clustered DataFrame to clustered_data.csv.
 
-Output Files:
+**Output Files:**
 clustered_data.csv: The original dataset with an added cluster column.
 
 
-Results and Insights
+**Results and Insights**
 
 Number of Clusters: 3 (determined via elbow method and silhouette score in the notebook).
 Cluster Interpretations (based on mean feature values):
@@ -90,7 +95,7 @@ cluster
 1                0.050681  0.199854  0.666324  124.905464  226568.204680  
 2                0.001384  0.435498  0.584036  100.387090   97522.338234
 
-Limitations
+**Limitations**
 
 The dataset path is hardcoded; make it relative or configurable for portability.
 Clustering assumes 3 clusters; experiment with different numbers for better results.
